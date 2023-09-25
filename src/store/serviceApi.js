@@ -7,7 +7,7 @@ export const serviceApi = createApi({
     baseUrl:
       process.env.NODE_ENV !== "production" && process.env.REACT_APP_ENV !== "production"
         ? "http://localhost:5005"
-        : "https://api.grupoguia.mx",
+        : "http://3.12.95.192",
 
     prepareHeaders: async (headers) => {
       headers.set("Content-Type", "application/json");
