@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const serviceApi = createApi({
   reducerPath: "serviceApi",
   baseQuery: fetchBaseQuery({
-    //baseUrl: 'https://crud-boomerang-jkyvd.ondigitalocean.app',
+    //baseUrl: "https://api.safetyguard.com.mx",
     baseUrl:
       process.env.NODE_ENV !== "production" && process.env.REACT_APP_ENV !== "production"
         ? "http://localhost:5005"
