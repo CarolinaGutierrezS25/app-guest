@@ -9,7 +9,6 @@ const Content = () => {
     const {incident_id, contact_id} = useParams();
     const {data: data_incident, error, isLoadind} = useGetIncidentQuery({incident_id, contact_id});
     const [incidentRefresh] = useGetIncidentRefreshMutation();
-    //console.log({incident_id, contact_id, data_incident, error, isLoadind});
     let idWatcher = null;
     const [locationGuest, setLocationGuest] = useState(null);
     const [locationUser, setLocationUser] = useState(null);
@@ -19,7 +18,7 @@ const Content = () => {
             //console.log({data_incident});
             const data = {
                 id: incident_id,
-                position: [data_incident.latitude, data_incident.longitude],
+                position: [data_incident.longitude, data_incident.latitude],
                 title: 'Ultima ubicación de tu contacto',
             }
             setLocationUser(data);
@@ -69,7 +68,7 @@ const Content = () => {
             if(response){
                 const data = {
                     id: incident_id,
-                    position: [response.data.latitude, response.data.longitude],
+                    position: [response.data.longitude, response.data.latitude],
                     title: 'Ultima ubicación de tu contacto',
                 }
                 setLocationUser(data);
